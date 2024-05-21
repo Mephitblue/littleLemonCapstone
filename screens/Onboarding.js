@@ -17,7 +17,7 @@ const Onboarding = () => {
     <View style={[styles.container, styles.primaryBackgroundColor1]}>
       <Image
         title="Logo"
-        source={require("../assets/images/logo.png")}
+        source={require("../assets/logo.png")}
         resizeMode="contain"
         accessible={true}
         accessibilityLabel={"Little Lemon Logo"}
