@@ -14,8 +14,8 @@ const Onboarding = () => {
   const [firstName, setFirstName] = useState("");
   const [firstNameValid, setFirstNameValid] = useState(false);
   return (
-    <SafeAreaView style={[styles.container, styles.primaryBackgroundColor1]}>
-      <View style={[styles.container, styles.primaryBackgroundColor1]}>
+    <SafeAreaView style={[styles.container]}>
+      <View style={[styles.headerArea]}>
         <Image
           title="Logo"
           source={require("../assets/Logo.png")}
@@ -23,46 +23,54 @@ const Onboarding = () => {
           accessible={true}
           accessibilityLabel={"Little Lemon Logo"}
         />
-
+      </View>
+      <View style={[styles.onboardingFormArea, styles.primaryBackgroundColor1]}>
         <Text style={[styles.sectionTitle]}>Let us get to know you</Text>
-        <View>
-          <Text style={[styles.leadText]}>First Name</Text>
-          <TextInput
-            style={styles.inputStyle}
-            width={200}
-            ref={firstNameRef}
-            value={firstName}
-            onChangeText={(text) => {
-              setFirstName(text);
-              setFirstNameValid(validateFirstName(text));
-            }}
-          />
-          <Text style={[styles.leadText]}>Email</Text>
-          <TextInput
-            style={styles.inputStyle}
-            width={200}
-            ref={emailRef}
-            value={email}
-            onChangeText={(text) => {
-              setEmail(text);
-              setEmailValid(validateEmail(text));
-            }}
-          />
-        </View>
-        <View>
-          <Pressable
-            title="Next"
+
+        <Text style={[styles.leadText]}>First Name</Text>
+        <TextInput
+          style={styles.inputStyle}
+          ref={firstNameRef}
+          value={firstName}
+          width={"80%"}
+          onChangeText={(text) => {
+            setFirstName(text);
+            setFirstNameValid(validateFirstName(text));
+          }}
+        />
+        <Text style={[styles.leadText]}>Email</Text>
+        <TextInput
+          style={styles.inputStyle}
+          width={"80%"}
+          ref={emailRef}
+          value={email}
+          onChangeText={(text) => {
+            setEmail(text);
+            setEmailValid(validateEmail(text));
+          }}
+        />
+      </View>
+      <View style={[styles.onboardingFooterArea]}>
+        <Pressable
+          title="Next"
+          style={
+            emailValid && firstNameValid
+              ? [styles.buttonStyle1, styles.buttonStyle1Active]
+              : [styles.buttonStyle1, styles.buttonStyle1Disabled]
+          }
+          disabled={!emailValid || !firstNameValid}
+          onPress={() => console.log("Next button clicked")}
+        >
+          <Text
             style={
               emailValid && firstNameValid
-                ? [styles.buttonStyle1, styles.buttonStyle1Active]
-                : [styles.buttonStyle1, styles.buttonStyle1Disabled]
+                ? [styles.leadText, styles.buttonStyle1Active]
+                : [styles.leadText, styles.textDisabledColor]
             }
-            disabled={!emailValid || !firstNameValid}
-            onPress={() => console.log("Next button clicked")}
           >
-            <Text style={[styles.leadText]}>NEXT</Text>
-          </Pressable>
-        </View>
+            NEXT
+          </Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

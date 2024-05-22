@@ -4,14 +4,32 @@ import React from "react";
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#EDEFEE",
   },
   headerArea: {
-    flex: 1,
+    flex: 0.1,
+    width: "100%",
+    flexDirection: "row",
     justifyContent: "center",
+    alignContent: "center",
     alignItems: "center",
+    backgroundColor: "#EDEFEE",
+  },
+  onboardingFormArea: {
+    flex: 0.75,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+  },
+  onboardingFooterArea: {
+    flex: 0.15,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    backgroundColor: "#EDEFEE",
   },
   primaryBackgroundColor1: {
     backgroundColor: "#495E57",
@@ -21,12 +39,12 @@ const Styles = StyleSheet.create({
   },
   buttonStyle1: {
     borderRadius: 16,
-    //fontFamily: "Karla",
-    fontSize: 20,
-    fontWeight: "extrabold",
-    textAlign: "center",
+    alignItems: "center",
+    alignContent: "center",
     padding: 10,
     margin: 10,
+    borderWidth: 1,
+    borderColor: "#333333",
   },
   buttonStyle1Active: {
     backgroundColor: "#F4CE14",
@@ -40,6 +58,7 @@ const Styles = StyleSheet.create({
     backgroundColor: "#EDEFEE",
     color: "#333333",
   },
+  textDisabledColor: { color: "#999999" },
   inputStyle: {
     borderRadius: 16,
     height: 40,
